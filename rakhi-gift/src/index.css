@@ -1219,6 +1219,7 @@ button {
   color: rgba(246, 232, 216, 0.6);
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .finale {
@@ -1337,6 +1338,10 @@ main {
     max-width: none;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+  }
+  .hero-script {
+    text-align: center;
   }
   .hero-cta {
     justify-content: center;
@@ -1346,9 +1351,34 @@ main {
   }
   .hero-note {
     justify-content: center;
+    text-align: center;
   }
   .cd {
     justify-content: center;
+  }
+  .cd-today {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tie-ui {
+    text-align: center;
+  }
+  .tie-result {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .chips {
+    justify-content: center;
+  }
+  .meaning-card {
+    text-align: center;
+  }
+  .meaning-card .note {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -1441,8 +1471,12 @@ main {
     left: -40px;
     right: auto;
   }
+  .tl-card {
+    text-align: center;
+  }
   .footer {
     padding: 56px 20px 40px;
+    text-align: center;
   }
 }
 
@@ -1473,6 +1507,9 @@ main {
   .grid-3 {
     grid-template-columns: 1fr;
     gap: 16px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .meaning-row {
     flex-direction: column;
