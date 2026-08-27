@@ -7,7 +7,7 @@ export default function SectionHeading({ kicker, title, lead }) {
         className="kicker"
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.6 }}
       >
         {kicker}
@@ -16,7 +16,7 @@ export default function SectionHeading({ kicker, title, lead }) {
         className="sec-title"
         initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.7, delay: 0.08 }}
       >
         {title}
@@ -45,7 +45,7 @@ export default function SectionHeading({ kicker, title, lead }) {
           className="lead"
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7, delay: 0.16 }}
         >
           {lead}

@@ -80,13 +80,13 @@ const BurstCanvas = forwardRef(function BurstCanvas({ className }, ref) {
             p.vy += 260 * dt
             p.x += p.vx * dt
             p.y += p.vy * dt
-            ctx.globalCompositeOperation = 'lighter'
+            
             ctx.globalAlpha = k
             ctx.fillStyle = '#ffd98e'
             ctx.beginPath()
             ctx.arc(p.x, p.y, p.size * k + 0.4, 0, 6.283)
             ctx.fill()
-            ctx.globalCompositeOperation = 'source-over'
+            
             ctx.globalAlpha = 1
           } else {
             p.vy += 560 * dt
@@ -197,7 +197,7 @@ export default function Ritual() {
               className="meaning-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.6, delay: i * 0.14 }}
             >
               <div className="deva">{m.deva}</div>
@@ -230,7 +230,7 @@ export default function Ritual() {
           className="panel"
           initial={{ opacity: 0, y: 44 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8 }}
         >
           <div className="mantra">

@@ -14,7 +14,7 @@ function Chapter({ ch, index }) {
       className={`tl-item ${left ? 'left' : 'right'} ${lit ? 'lit' : ''}`}
       initial={{ opacity: 0, x: left ? -44 : 44 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.45 }}
+      viewport={{ once: true, amount: 0.05 }}
       transition={{ duration: 0.65, ease: [0.2, 0.8, 0.2, 1] }}
       onViewportEnter={() => setLit(true)}
     >

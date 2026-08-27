@@ -43,14 +43,14 @@ export default function ClickSparkles() {
         p.vy += 260 * dt
         p.x += p.vx * dt
         p.y += p.vy * dt
-        ctx.globalCompositeOperation = 'lighter'
+        
         ctx.globalAlpha = k
         ctx.fillStyle = '#e9b949'
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size * k + 0.4, 0, 6.283)
         ctx.fill()
         ctx.globalAlpha = 1
-        ctx.globalCompositeOperation = 'source-over'
+        
       }
       raf = parts.length ? requestAnimationFrame(loop) : 0
     }

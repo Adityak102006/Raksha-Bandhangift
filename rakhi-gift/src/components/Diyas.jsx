@@ -82,7 +82,7 @@ function Fireworks({ active }) {
         r.vy += 230 * dt
         r.x += r.vx * dt
         r.y += r.vy * dt
-        ctx.globalCompositeOperation = 'lighter'
+        
         ctx.strokeStyle = '#ffdf8e'
         ctx.lineWidth = 2.4
         ctx.globalAlpha = 0.9
@@ -91,7 +91,7 @@ function Fireworks({ active }) {
         ctx.lineTo(r.x, r.y)
         ctx.stroke()
         ctx.globalAlpha = 1
-        ctx.globalCompositeOperation = 'source-over'
+        
         if (r.vy > -46) {
           rockets.splice(i, 1)
           explode(r.x, r.y)
@@ -114,7 +114,7 @@ function Fireworks({ active }) {
         const oy = p.y
         p.x += p.vx * dt
         p.y += p.vy * dt
-        ctx.globalCompositeOperation = 'lighter'
+        
         ctx.globalAlpha = (0.45 + 0.55 * Math.abs(Math.sin(p.age * p.tw))) * k
         ctx.strokeStyle = p.color
         ctx.lineWidth = p.size
@@ -123,7 +123,7 @@ function Fireworks({ active }) {
         ctx.lineTo(p.x, p.y)
         ctx.stroke()
         ctx.globalAlpha = 1
-        ctx.globalCompositeOperation = 'source-over'
+        
       }
 
       if (!stopped && (now > endAt || !document.body.contains(canvas))) {

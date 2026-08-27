@@ -59,7 +59,7 @@ export default function Letter() {
           className="env-wrap"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7 }}
           onClick={openEnvelope}
           role="button"

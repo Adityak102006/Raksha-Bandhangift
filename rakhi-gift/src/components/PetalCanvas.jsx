@@ -20,7 +20,7 @@ export default function PetalCanvas({ active }) {
     const ctx = canvas.getContext('2d')
     let W = 0
     let H = 0
-    const DPR = Math.min(2, window.devicePixelRatio || 1)
+    const DPR = window.innerWidth <= 768 ? 1 : Math.min(2, window.devicePixelRatio || 1)
     const petals = []
 
     const resize = () => {
@@ -54,7 +54,7 @@ export default function PetalCanvas({ active }) {
       }
     }
 
-    const target = () => Math.max(14, Math.min(40, Math.round(W / 28)))
+    const target = () => Math.max(8, Math.min(25, Math.round(W / 45)))
     for (let i = 0; i < target(); i++) {
       const p = make()
       p.y = Math.random() * H
