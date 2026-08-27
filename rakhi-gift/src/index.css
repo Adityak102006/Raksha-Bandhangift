@@ -1310,58 +1310,56 @@ main {
   z-index: 2;
 }
 
+/* ============================================================
+   RESPONSIVE — mobile-first, layered breakpoints
+   Breakpoints: 920 · 900 · 768 · 720 · 640 · 480 · 360
+   ============================================================ */
+
+/* ---------- ≤ 920px  (tablet landscape / large tablet) ---------- */
 @media (max-width: 920px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
+    text-align: center;
   }
   .hero {
-    padding-top: 104px;
+    padding-top: 108px;
+    padding-bottom: 60px;
   }
   .hero-art {
-    min-height: 300px;
-    order: 2;
+    min-height: 260px;
+    order: -1;
   }
   .hero-rak {
-    width: min(56vw, 250px);
+    width: min(52vw, 240px);
   }
   .hero-sub {
     max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+  .hero-badge {
+    margin: 0 auto;
+  }
+  .hero-note {
+    justify-content: center;
+  }
+  .cd {
+    justify-content: center;
   }
 }
 
+/* ---------- ≤ 900px  (promise grid → 2 columns) ---------- */
 @media (max-width: 900px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
-}
-
-@media (max-width: 640px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-  .tl-track {
-    left: 15px;
-    transform: none;
-  }
-  .tl-item,
-  .tl-item.right {
-    width: calc(100% - 52px);
-    margin-left: 52px;
-    margin-right: 0;
-  }
-  .tl-item .tl-dot,
-  .tl-item.right .tl-dot {
-    left: -43px;
-    right: auto;
-  }
-}
-
-/* ---------- responsive fine-tuning ---------- */
-@media (max-width: 900px) {
-  /* keep the pill clear of the sound button */
   .nav {
-    max-width: calc(100vw - 128px);
+    max-width: calc(100vw - 132px);
   }
   .nav a {
     padding: 8px 12px;
@@ -1369,110 +1367,382 @@ main {
   }
 }
 
+/* ---------- ≤ 768px  (tablet portrait) ---------- */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .hero {
+    padding: 100px 0 60px;
+  }
+  .meaning-row {
+    gap: 14px;
+  }
+  .meaning-card {
+    min-width: calc(50% - 14px);
+    flex: 1 1 calc(50% - 14px);
+    padding: 24px 20px;
+  }
+  .tie-svg {
+    max-width: 100%;
+  }
+  .panel {
+    border-radius: 24px;
+    margin-top: 40px;
+  }
+  .tl {
+    margin-top: 48px;
+  }
+  .tl-item {
+    margin-bottom: 36px;
+  }
+  .pcard {
+    height: 280px;
+  }
+}
+
+/* ---------- ≤ 720px  (large phone landscape / small tablet) ---------- */
 @media (max-width: 720px) {
-  /* sound button moves to the bottom corner like a proper FAB */
   .fab {
     top: auto;
     bottom: 18px;
     right: 16px;
+    width: 50px;
+    height: 50px;
     box-shadow: var(--shadow-2);
   }
-  /* nothing sits top-right anymore, so the pill can breathe */
   .nav {
     max-width: calc(100vw - 24px);
   }
   .section {
-    padding: 76px 0;
-  }
-  .panel {
-    border-radius: 24px;
+    padding: 72px 0;
   }
   .hero {
-    padding: 96px 0 64px;
+    padding: 94px 0 56px;
   }
   .tie-ui .btn {
     width: 100%;
     justify-content: center;
   }
+  .tl-track {
+    left: 14px;
+    transform: none;
+  }
+  .tl-item,
+  .tl-item.left,
+  .tl-item.right {
+    width: calc(100% - 48px);
+    margin-left: 48px;
+    margin-right: 0;
+  }
+  .tl-item .tl-dot,
+  .tl-item.left .tl-dot,
+  .tl-item.right .tl-dot {
+    left: -40px;
+    right: auto;
+  }
+  .footer {
+    padding: 56px 20px 40px;
+  }
 }
 
-@media (max-width: 480px) {
+/* ---------- ≤ 640px  (phones landscape / small phones portrait) ---------- */
+@media (max-width: 640px) {
   .container {
-    padding: 0 18px;
+    padding: 0 16px;
   }
-  .env-letter {
-    padding: 12px 14px 0;
+  .section {
+    padding: 64px 0;
   }
-  .lp-salut {
-    font-size: 12.5px;
-    margin-bottom: 5px;
+  .hero {
+    padding: 88px 0 52px;
   }
-  .lp-line {
-    font-size: 10px;
-    line-height: 1.5;
-    margin-bottom: 5px;
+  .hero-art {
+    min-height: 200px;
   }
-  .hero-cta .btn {
-    flex: 1;
-    justify-content: center;
-    min-width: 140px;
-    padding: 13px 20px;
-    font-size: 14px;
+  .hero-rak {
+    width: min(48vw, 200px);
   }
-  .cd {
-    gap: 7px;
+  .hero-title {
+    font-size: clamp(38px, 10vw, 72px);
+    line-height: 1.04;
   }
-  .cd-cell {
-    min-width: 58px;
+  .hero-script {
+    font-size: clamp(18px, 4.5vw, 28px);
   }
-  .cd-num {
-    font-size: 21px;
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .meaning-row {
+    flex-direction: column;
+    align-items: center;
   }
   .meaning-card {
-    min-width: 0;
     width: 100%;
-    max-width: 340px;
-    padding: 24px 22px;
+    max-width: 380px;
+    min-width: 0;
+    padding: 22px 20px;
+  }
+  .chips {
+    gap: 8px;
+  }
+  .chip {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  .tl-card {
+    padding: 20px;
+  }
+  .tl-card h3 {
+    font-size: 20px;
+  }
+  .cd {
+    gap: 8px;
+  }
+  .cd-cell {
+    min-width: 62px;
+    padding: 9px 6px 7px;
+  }
+  .cd-num {
+    font-size: 22px;
+  }
+  .env-wrap {
+    width: min(340px, 90vw);
+  }
+  .paper {
+    padding: 28px 18px;
+    max-height: 88vh;
+  }
+  .ln {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+  .ln.salut {
+    font-size: clamp(20px, 5vw, 24px);
+  }
+  .ln.big {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+  .diya {
+    width: clamp(88px, 26vw, 130px);
+  }
+  .finale {
+    padding: 28px 18px;
+    margin-top: 40px;
+  }
+  .lead {
+    font-size: clamp(14px, 3.2vw, 16px);
   }
   .mantra {
-    padding: 20px 16px 24px;
+    padding: 18px 14px 22px;
+  }
+  .mantra .dv {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.9;
+  }
+  .panel {
+    border-radius: 20px;
+    padding: clamp(20px, 5vw, 40px);
   }
   .pcard {
-    height: 280px;
+    height: auto;
+    min-height: 260px;
+  }
+  .pcard-inner {
+    min-height: 260px;
+  }
+  .pface {
+    min-height: 260px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 14.5px;
+  }
+}
+
+/* ---------- ≤ 480px  (phones portrait — standard) ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+  .section {
+    padding: 56px 0;
+  }
+  .hero {
+    padding: 80px 0 48px;
+  }
+  .hero-art {
+    min-height: 180px;
+  }
+  .hero-rak {
+    width: min(54vw, 180px);
+  }
+  .hero-title {
+    font-size: clamp(34px, 11vw, 60px);
+  }
+  .hero-script {
+    font-size: clamp(16px, 5vw, 24px);
+    margin-top: 10px;
+  }
+  .hero-sub {
+    font-size: clamp(14px, 3.6vw, 16px);
+    margin-top: 14px;
+  }
+  .sec-title {
+    font-size: clamp(26px, 7vw, 40px);
+  }
+  .env-letter {
+    padding: 10px 12px 0;
+  }
+  .lp-salut {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .lp-line {
+    font-size: 9.5px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .cd {
+    gap: 6px;
+  }
+  .cd-cell {
+    min-width: 56px;
+    padding: 8px 5px 6px;
+    border-radius: 12px;
+  }
+  .cd-num {
+    font-size: 20px;
+  }
+  .cd-lab {
+    font-size: 9px;
+  }
+  .meaning-card {
+    padding: 20px 16px;
+  }
+  .meaning-card .deva {
+    font-size: 36px;
+  }
+  .pcard {
+    min-height: 240px;
+  }
+  .pcard-inner {
+    min-height: 240px;
+  }
+  .pface {
+    min-height: 240px;
   }
   .pback .vow {
-    font-size: 17px;
+    font-size: 16px;
   }
   .pback .txt {
     font-size: 13px;
   }
   .paper {
-    padding: 26px 20px;
+    padding: 22px 14px;
+    border-radius: 16px;
+    max-height: 90vh;
   }
-  .ln.salut {
-    font-size: 22px;
+  .paper::before {
+    inset: 7px;
   }
-  .ln.big {
-    font-size: 24px;
+  .diya {
+    width: clamp(80px, 28vw, 120px);
+  }
+  .diya-row {
+    gap: clamp(4px, 2vw, 16px);
   }
   .finale {
-    padding: 30px 20px;
+    padding: 24px 14px;
   }
-}
-
-@media (max-width: 360px) {
-  .cd {
-    gap: 5px;
+  .finale h3 {
+    font-size: clamp(18px, 5vw, 24px);
   }
-  .cd-cell {
-    min-width: 52px;
+  .mantra {
+    padding: 16px 12px 20px;
   }
   .nav a {
-    padding: 8px 10px;
+    padding: 7px 10px;
     font-size: 12px;
+  }
+  .tie-result {
+    padding: 20px 16px;
+  }
+  .tie-result h3 {
+    font-size: 18px;
+  }
+  .tie-result p {
+    font-size: 14px;
+  }
+  .footer {
+    padding: 48px 14px 36px;
+    font-size: 13px;
   }
 }
 
+/* ---------- ≤ 360px  (very small phones — Galaxy S5, old iPhones) ---------- */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 12px;
+  }
+  .hero-title {
+    font-size: clamp(30px, 12vw, 52px);
+  }
+  .hero-script {
+    font-size: clamp(14px, 5.5vw, 22px);
+  }
+  .hero-art {
+    min-height: 160px;
+  }
+  .hero-rak {
+    width: min(60vw, 160px);
+  }
+  .cd {
+    gap: 4px;
+  }
+  .cd-cell {
+    min-width: 50px;
+    padding: 7px 4px 6px;
+    border-radius: 10px;
+  }
+  .cd-num {
+    font-size: 18px;
+  }
+  .nav {
+    padding: 4px;
+    gap: 2px;
+  }
+  .nav a {
+    padding: 6px 8px;
+    font-size: 11.5px;
+  }
+  .meaning-card {
+    padding: 16px 12px;
+  }
+  .meaning-card .deva {
+    font-size: 32px;
+  }
+  .diya {
+    width: clamp(72px, 30vw, 108px);
+  }
+}
+
+/* ---------- high-DPR / retina ---------- */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tie-svg {
+    shape-rendering: geometricPrecision;
+  }
+}
+
+/* ---------- prefers-reduced-motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1485,3 +1755,4 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
