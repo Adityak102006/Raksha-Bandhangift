@@ -1328,7 +1328,7 @@ main {
   }
   .hero-art {
     min-height: 260px;
-    order: -1;
+    order: 2;
   }
   .hero-rak {
     width: min(52vw, 240px);
